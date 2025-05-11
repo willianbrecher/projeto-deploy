@@ -38,7 +38,7 @@ jobs:
         echo "$PRIVATE_KEY" > deploy_key.pem
         chmod 600 deploy_key.pem
 
-        docker save -o projeto-deploy.tar projeto-deploy-aws-api
+        docker save -o projeto-deploy.tar projeto-deploy_api
 
         scp -o StrictHostKeyChecking=no -i deploy_key.pem projeto-deploy.tar $USER@$HOST:/home/ubuntu/
         scp -o StrictHostKeyChecking=no -i deploy_key.pem init.sql $USER@$HOST:/home/ubuntu/
